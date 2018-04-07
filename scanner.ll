@@ -6,6 +6,8 @@
 
     static mp::location loc;
 
+    #define YY_USER_ACTION loc.step(); loc.columns(yyleng);
+
     #undef  YY_DECL
     #define YY_DECL mp::parser::symbol_type mp::scanner::yylex(mp::driver &driver)
 
