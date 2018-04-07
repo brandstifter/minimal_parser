@@ -2,7 +2,11 @@
 
 #include <iostream>
 
+#include <location.hh>
+
 namespace mp {
+
+    class parser;
 
     class driver {
     public:
@@ -10,7 +14,6 @@ namespace mp {
         virtual ~driver() {};
 
         int parse(std::istream& in, std::ostream& out);
-        void update_location(int length);
 
         friend class parser;
         friend class scanner;

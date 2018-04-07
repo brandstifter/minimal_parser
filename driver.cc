@@ -13,9 +13,3 @@ int mp::driver::parse(std::istream& in, std::ostream& out) {
 
     return res;
 }
-
-
-void
-mp::driver::update_location(int length) {
-
-}

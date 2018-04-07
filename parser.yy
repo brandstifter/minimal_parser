@@ -8,9 +8,11 @@
 %define api.token.constructor
 %define parse.assert true
 %define parse.error verbose
-//%locations
+%locations
+
 
 %param {mp::driver &driver}
+//%lex-param {mp::parser::location_type &loc}
 %parse-param {mp::scanner &scanner}
 
 %code requires {
@@ -60,6 +62,6 @@ names
 
 %%
 
-void mp::parser::error(const std::string &message) {
+void mp::parser::error(const location_type &, const std::string& message) {
     std::cerr << "parser error: " << message << std::endl;
 }
